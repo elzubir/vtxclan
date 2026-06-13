@@ -94,7 +94,7 @@ function renderChart(series) {
     const label = new Date(d + 'T00:00:00Z').toLocaleDateString(undefined, { weekday: 'short' });
     return `<div class="bar-col">
         <span class="bar-val">${v}</span>
-        <div class="bar" style="height:${h}%"></div>
+        <div class="bar-track"><div class="bar" style="height:${h}%"></div></div>
         <span class="bar-label">${label}</span>
       </div>`;
   }).join('');
