@@ -21,6 +21,17 @@ export default [
     },
   },
   {
+    files: ['tests/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2023,
+      sourceType: 'module',
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+      },
+    },
+  },
+  {
     files: ['public/js/**/*.js'],
     languageOptions: {
       ecmaVersion: 2023,
