@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VTX Clan — Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="grid-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark gradient-text">VTX CLAN</span>
+      <span class="tag">Command Center</span>
+    </div>
+    <div class="topbar-right">
+      <span class="clock" id="clock">--:--:--</span>
+      <span class="pill">
+        <span class="dot" id="bot-dot"></span>
+        <span id="bot-status">connecting…</span>
+      </span>
+      <span class="pill">
+        <span class="dot" id="live-dot"></span>
+        <span id="live-status">realtime</span>
+      </span>
+      <button class="link-btn" id="logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid" id="stats-grid"></section>
+
+    <section class="grid">
+      <div class="panel tall">
+        <div class="panel-head">
+          <h2><span class="live"></span> Live Discord Logs</h2>
+          <div class="filters" id="event-filters">
+            <button class="chip active" data-type="all">All</button>
+            <button class="chip" data-type="ban_add">Bans</button>
+            <button class="chip" data-type="kick">Kicks</button>
+            <button class="chip" data-type="message_delete">Deletes</button>
+            <button class="chip" data-type="message_edit">Edits</button>
+            <button class="chip" data-type="member_join">Joins</button>
+            <button class="chip" data-type="timeout">Timeouts</button>
+          </div>
+        </div>
+        <div class="panel-body" id="events-body"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Activity · Last 7 Days</h2></div>
+        <div class="chart-wrap"><div class="bars" id="chart"></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Errors</h2>
+          <span class="count" id="errors-count"></span>
+        </div>
+        <div class="panel-body" id="errors-body"></div>
+      </div>
+
+      <div class="panel" style="grid-column: 1 / -1;">
+        <div class="panel-head">
+          <h2>Application Logs</h2>
+          <div class="filters" id="log-filters">
+            <button class="chip active" data-level="all">All</button>
+            <button class="chip" data-level="info">Info</button>
+            <button class="chip" data-level="warn">Warn</button>
+            <button class="chip" data-level="error">Error</button>
+            <button class="chip" data-level="debug">Debug</button>
+          </div>
+        </div>
+        <div class="panel-body" id="logs-body"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toasts"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/bg.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
