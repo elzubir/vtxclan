@@ -18,6 +18,7 @@ export const config = {
   discordToken: process.env.DISCORD_TOKEN || '',
   discordGuildId: process.env.DISCORD_GUILD_ID || '',
   seedOnStart: String(process.env.SEED_ON_START || 'true').toLowerCase() === 'true',
+  allowSimulate: String(process.env.ALLOW_SIMULATE || 'false').toLowerCase() === 'true',
 };
 
 export const hasDiscordToken = Boolean(config.discordToken);
